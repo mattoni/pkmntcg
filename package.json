@@ -1,0 +1,25 @@
+{
+  "name": "pkmntcg",
+  "private": true,
+  "scripts": {
+    "dev": "yarn run concurrently '(cd server && yarn dev)'",
+    "lint": "yarn eslint . --ext .js,.jsx,.ts,.tsx",
+    "server": "yarn workspace server dev",
+    "web": "yarn workspace admin start",
+    "extract-i18n": "npx ttag update --discover='t' shared/i18n/ja.po ./server/src",
+    "rebuild-i18n": "npx ttag po2json shared/i18n/ja.po > shared/i18n/ja.po.json"
+  },
+  "workspaces": [
+    "web",
+    "server",
+    "mobile",
+    "shared"
+  ],
+  "devDependencies": {
+    "ttag-cli": "^1.8.4"
+  },
+  "nohoist": [
+    "**/react-native",
+    "**/react-native/**"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "extends": "../tsconfig.base",
+  "compilerOptions": {
+    "lib": ["DOM", "DOM.Iterable", "esnext"],
+    "outDir": "dist",
+    "baseUrl": "..",
+    "noEmit": true
+  },
+  "include": ["./**/*"]
+}

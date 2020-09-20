@@ -1,0 +1,83 @@
+msgid ""
+msgstr ""
+"mime-version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: PkmnTcg\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: server/src/modules/common/errors.ts:94
+#. * [403] Auth errors
+msgid "Your access token is not valid. It may be expired."
+msgstr ""
+
+#: server/src/modules/common/errors.ts:95
+msgid "The access token was missing from the 'Authorization' header."
+msgstr ""
+
+#: server/src/modules/common/errors.ts:96
+msgid ""
+"There was a non-specific issue with the request. Check and make sure that "
+"your JSON payload is valid."
+msgstr ""
+
+#: server/src/modules/common/errors.ts:97
+msgid "The refresh token is not valid."
+msgstr ""
+
+#: server/src/modules/common/errors.ts:98
+msgid "The redirect requested is not valid."
+msgstr ""
+
+#: server/src/modules/common/errors.ts:101
+#. * [404] Not found errors 
+msgid "The requested endpoint does not exist."
+msgstr ""
+
+#: server/src/modules/common/errors.ts:102
+msgid "The requested account does not exist."
+msgstr ""
+
+#: server/src/modules/common/errors.ts:105
+#. * [422] Validation errors 
+msgid "Validation of one or more fields failed."
+msgstr ""
+
+#: server/src/modules/common/errors.ts:108
+#. * [500] Server errors 
+msgid "An internal error occurred and the server could not complete the request."
+msgstr ""
+
+#: server/src/modules/common/errors.ts:109
+msgid "An error occurred attempting to send an email."
+msgstr ""
+
+#: server/src/modules/common/errors.ts:110
+msgid "There was an error with the database"
+msgstr ""
+
+#: server/src/modules/common/errors.ts:113
+#. * [0] Client errors 
+msgid ""
+"There was an error attempting to make the request. This could indicate an "
+"issue with the internet connection."
+msgstr ""
+
+#: server/src/modules/common/errors.ts:114
+msgid "The response from the server was unable to be parsed."
+msgstr ""
+
+#: server/src/modules/common/errors.ts:134
+#, javascript-format
+msgid "'${ field }' is required."
+msgstr ""
+
+#: server/src/modules/common/errors.ts:143
+#, javascript-format
+msgid "'${ _field }' cannot be longer than ${ limit } characters."
+msgstr ""
+
+#: server/src/modules/common/errors.ts:151
+msgid "There was an error with the field '${ _field2 }'."
+msgstr ""
