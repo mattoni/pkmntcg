@@ -49,7 +49,7 @@ export const handleUpdateAccount = async (
   server.patch('/account', async (request, reply) => {
     const {name} = request.body as {name: string}
     return pipe(
-      flow(authorize, TE.fromEither)(request),
+      authorize(request),
       TE.chain((v) => lookupAccountById(request.db)(v.id)),
       TE.chain(updateAccount(request.db)({name})),
       TE.chain((v) => TE.right(serverAccountToAccount(v))),
