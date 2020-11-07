@@ -5,7 +5,7 @@ import {FastifyLoggerOptions} from 'fastify'
 import {connectToDb} from './database'
 import gracefulShutdown from 'fastify-graceful-shutdown'
 
-const init = async (): Promise<void> => {
+const init = async () => {
   const server = await buildServer(await connectToDb(), {
     // prettyPrint isn't defined, so we need to force it as logger option type
     logger: {level: 'info', prettyPrint: true} as FastifyLoggerOptions,

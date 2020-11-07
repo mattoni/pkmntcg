@@ -16,6 +16,5 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "skipLibCheck": true
-  },
-  "exclude": ["./node_modules/**/*"]
+  }
 }

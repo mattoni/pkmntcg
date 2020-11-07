@@ -2,7 +2,8 @@
   "extends": "../tsconfig.base",
   "compilerOptions": {
     "outDir": "dist",
-    "baseUrl": "."
+    "baseUrl": ".",
+    "target": "ESNext",
   },
-  "include": ["./src/**/*", "./typings"]
+  "include": ["./src/**/*", "./scripts/**/*", "./typings"]
 }

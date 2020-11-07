@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run serve",
-    "serve": "node dist/index.js",
-    "dev": "yarn generate-schemas && yarn run concurrently 'yarn watch-ts' 'yarn watch-node'",
+    "serve": "yarn node dist/index.js",
+    "dev": "yarn run concurrently 'yarn watch-ts' 'yarn watch-node'",
     "watch-node": "PORT=8000 nodemon dist/index.js",
     "build-ts": "tsc",
     "watch-ts": "tsc -w",
@@ -17,9 +17,6 @@
   "license": "UNLICENSED",
   "dependencies": {
     "@sendgrid/mail": "^7.2.3",
-    "@types/jsonwebtoken": "^8.5.0",
-    "@types/node": "^14.0.22",
-    "@types/node-fetch": "^2.5.7",
     "accept-language-parser": "^1.5.0",
     "bcrypt": "^5.0.0",
     "chalk": "^4.1.0",
@@ -34,21 +31,25 @@
     "mongodb": "^3.6.2",
     "pino-pretty": "^4.2.0",
     "shared": "1.0.0",
-    "tap": "^14.10.8",
     "ts-node": "^9.0.0",
     "ttag": "^1.7.22",
-    "typescript": "^3.9.7",
     "typescript-json-schema": "^0.43.0",
     "uuid": "^8.2.0"
   },
   "devDependencies": {
     "@types/bcrypt": "^3.0.0",
     "@types/google-protobuf": "^3.7.2",
+    "@types/jsonwebtoken": "^8.5.0",
     "@types/mongodb": "^3.5.27",
+    "@types/node": "14.14.6",
+    "@types/node-fetch": "^2.5.7",
     "@types/protobufjs": "^6.0.0",
     "@types/tap": "^14.10.0",
     "@types/uuid": "^8.0.0",
     "concurrently": "^5.3.0",
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "ttag-cli": "1.8.6",
+    "typescript": "^3.9.7",
+    "tap": "14.10.8"
   }
 }
