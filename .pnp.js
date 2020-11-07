@@ -51,6 +51,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@typescript-eslint/parser", "virtual:ea4b19b11f985c1b312b03d60b5188fc9f66f5ea6c2719f9be09b8979ea36c02d545a234cc214b052a475dad558229df0768a5775cb8295f565dcf8eef43d7b2#npm:4.6.1"],
             ["eslint", "npm:7.12.1"],
             ["eslint-config-prettier", "virtual:ea4b19b11f985c1b312b03d60b5188fc9f66f5ea6c2719f9be09b8979ea36c02d545a234cc214b052a475dad558229df0768a5775cb8295f565dcf8eef43d7b2#npm:6.15.0"],
+            ["pino-pretty", "npm:4.3.0"],
             ["prettier", "npm:2.1.2"],
             ["ttag-cli", "npm:1.8.6"],
             ["typescript", "patch:typescript@npm%3A4.0.5#builtin<compat/typescript>::version=4.0.5&hash=5bf698"]
@@ -7291,6 +7292,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@typescript-eslint/parser", "virtual:ea4b19b11f985c1b312b03d60b5188fc9f66f5ea6c2719f9be09b8979ea36c02d545a234cc214b052a475dad558229df0768a5775cb8295f565dcf8eef43d7b2#npm:4.6.1"],
             ["eslint", "npm:7.12.1"],
             ["eslint-config-prettier", "virtual:ea4b19b11f985c1b312b03d60b5188fc9f66f5ea6c2719f9be09b8979ea36c02d545a234cc214b052a475dad558229df0768a5775cb8295f565dcf8eef43d7b2#npm:6.15.0"],
+            ["pino-pretty", "npm:4.3.0"],
             ["prettier", "npm:2.1.2"],
             ["ttag-cli", "npm:1.8.6"],
             ["typescript", "patch:typescript@npm%3A4.0.5#builtin<compat/typescript>::version=4.0.5&hash=5bf698"]
@@ -8132,7 +8134,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["ts-node", "virtual:5e2e00b31e527ff544c90eb3e3e3e977a366e52a6e25602d03686a4c9a155eee4d7b92ccdea0b04275344f5b2189eb629d123eb4cc6e1b883b42aea6d965568d#npm:9.0.0"],
             ["ttag", "npm:1.7.22"],
             ["ttag-cli", "npm:1.8.6"],
-            ["typescript", "patch:typescript@npm%3A3.9.7#builtin<compat/typescript>::version=3.9.7&hash=5bf698"],
+            ["typescript", "patch:typescript@npm%3A4.0.5#builtin<compat/typescript>::version=4.0.5&hash=5bf698"],
             ["typescript-json-schema", "npm:0.43.0"],
             ["uuid", "npm:8.3.1"]
           ],
@@ -8924,7 +8926,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["diff", "npm:4.0.2"],
             ["make-error", "npm:1.3.6"],
             ["source-map-support", "npm:0.5.19"],
-            ["typescript", "patch:typescript@npm%3A3.9.7#builtin<compat/typescript>::version=3.9.7&hash=5bf698"],
+            ["typescript", "patch:typescript@npm%3A4.0.5#builtin<compat/typescript>::version=4.0.5&hash=5bf698"],
             ["yn", "npm:3.1.1"]
           ],
           "packagePeers": [

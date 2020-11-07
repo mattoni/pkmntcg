@@ -70,10 +70,7 @@ export const handleAuthorize = async (
   )
 }
 
-export const handleLogout = async (
-  server: FastifyInstance
-  // eslint-disable-next-line @typescript-eslint/require-await
-): Promise<void> => {
+export const handleLogout = async (server: FastifyInstance): Promise<void> => {
   server.post('/logout', async (request, reply) => {
     const {refresh} = request.cookies
 

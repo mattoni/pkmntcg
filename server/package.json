@@ -21,15 +21,15 @@
     "bcrypt": "^5.0.0",
     "chalk": "^4.1.0",
     "dotenv": "^8.2.0",
-    "fastify": "^3.2.1",
-    "fastify-cookie": "^4.0.2",
+    "fastify": "3.7.0",
+    "fastify-cookie": "4.1.0",
     "fastify-cors": "^4.1.0",
     "fastify-graceful-shutdown": "^3.0.0",
     "fastify-plugin": "^2.3.3",
     "fp-ts": "^2.8.1",
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.6.2",
-    "pino-pretty": "^4.2.0",
+    "pino-pretty": "4.3.0",
     "shared": "1.0.0",
     "ttag": "^1.7.22",
     "typescript-json-schema": "^0.43.0",
@@ -50,6 +50,6 @@
     "tap": "14.10.8",
     "ts-node": "9.0.0",
     "ttag-cli": "1.8.6",
-    "typescript": "^3.9.7"
+    "typescript": "4.0.5"
   }
 }
