@@ -5548,7 +5548,7 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"nodemon@npm:^2.0.4":
+"nodemon@npm:2.0.6":
   version: 2.0.6
   resolution: "nodemon@npm:2.0.6"
   dependencies:
@@ -6903,11 +6903,11 @@ fsevents@~2.1.2:
     fp-ts: ^2.8.1
     jsonwebtoken: ^8.5.1
     mongodb: ^3.6.2
-    nodemon: ^2.0.4
+    nodemon: 2.0.6
     pino-pretty: ^4.2.0
     shared: 1.0.0
-    tap: ^14.10.8
-    ts-node: ^9.0.0
+    tap: 14.10.8
+    ts-node: 9.0.0
     ttag: ^1.7.22
     ttag-cli: 1.8.6
     typescript: ^3.9.7
@@ -7395,7 +7395,7 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"tap@npm:^14.10.8":
+"tap@npm:14.10.8":
   version: 14.10.8
   resolution: "tap@npm:14.10.8"
   dependencies:
@@ -7613,6 +7613,26 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"ts-node@npm:9.0.0":
+  version: 9.0.0
+  resolution: "ts-node@npm:9.0.0"
+  dependencies:
+    arg: ^4.1.0
+    diff: ^4.0.1
+    make-error: ^1.1.1
+    source-map-support: ^0.5.17
+    yn: 3.1.1
+  peerDependencies:
+    typescript: ">=2.7"
+  bin:
+    ts-node: dist/bin.js
+    ts-node-script: dist/bin-script.js
+    ts-node-transpile-only: dist/bin-transpile.js
+    ts-script: dist/bin-script-deprecated.js
+  checksum: 49d2ab087fc4b93f0a292e426ea6d242a80d1a4809ac008758bb0170aea1a85cd4182792c1d70889285fe5328cd8bd1ffb1e5108d1c4f31c39dbe9151ea4cabe
+  languageName: node
+  linkType: hard
+
 "ts-node@npm:^8.5.2":
   version: 8.10.2
   resolution: "ts-node@npm:8.10.2"
@@ -7630,26 +7650,6 @@ fsevents@~2.1.2:
     ts-node-transpile-only: dist/bin-transpile.js
     ts-script: dist/bin-script-deprecated.js
   checksum: cd6e023e073d65ea346cf4a5b70bfd1e7c7f342c967a23a83038fd3462067558a4dda4fc8b238e6709db69aca3847590a93b4c52ae001e23ed9fef3b4fecbc71
-  languageName: node
-  linkType: hard
-
-"ts-node@npm:^9.0.0":
-  version: 9.0.0
-  resolution: "ts-node@npm:9.0.0"
-  dependencies:
-    arg: ^4.1.0
-    diff: ^4.0.1
-    make-error: ^1.1.1
-    source-map-support: ^0.5.17
-    yn: 3.1.1
-  peerDependencies:
-    typescript: ">=2.7"
-  bin:
-    ts-node: dist/bin.js
-    ts-node-script: dist/bin-script.js
-    ts-node-transpile-only: dist/bin-transpile.js
-    ts-script: dist/bin-script-deprecated.js
-  checksum: 49d2ab087fc4b93f0a292e426ea6d242a80d1a4809ac008758bb0170aea1a85cd4182792c1d70889285fe5328cd8bd1ffb1e5108d1c4f31c39dbe9151ea4cabe
   languageName: node
   linkType: hard
 

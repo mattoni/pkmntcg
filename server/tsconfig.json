@@ -4,6 +4,7 @@
     "outDir": "dist",
     "baseUrl": ".",
     "target": "ESNext",
+    "typeRoots": ["./node_modules/@types", "./typings"]
   },
   "include": ["./src/**/*", "./scripts/**/*", "./typings"]
 }
