@@ -50,7 +50,7 @@ export const buildServer = async (db: Db, opts: FastifyServerOptions = {}) => {
     for (const file of files) {
       if (!file.includes('.json')) continue
       const content = await readFile(`${directoryPath}/${file}`)
-      const parsed = JSON.parse(content.toString())
+      const parsed = JSON.parse(content.toString()) as Record<string, string>
       server.addSchema({
         $id: file.replace('.json', ''),
         ...parsed,

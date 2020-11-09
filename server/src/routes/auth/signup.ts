@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/require-await */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
 import {FastifyInstance} from 'fastify'
 import * as TE from 'fp-ts/lib/TaskEither'
 import * as T from 'fp-ts/lib/Task'

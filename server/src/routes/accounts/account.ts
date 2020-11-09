@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/require-await */
 import {FastifyInstance} from 'fastify'
 import {
   updateAccount,

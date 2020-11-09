@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/require-await */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
 import {FastifyInstance} from 'fastify'
 import * as TE from 'fp-ts/lib/TaskEither'
 import {pipe} from 'fp-ts/lib/pipeable'
@@ -73,8 +71,10 @@ export const handleAuthorize = async (
 export const handleLogout = async (server: FastifyInstance): Promise<void> => {
   server.post('/logout', async (request, reply) => {
     const {refresh} = request.cookies
-
-    reply.clearCookie('refresh')
-    pipe(deleteRefreshToken({token: refresh}), taskFoldReply(request, reply))()
+    void reply.clearCookie('refresh')
+    void pipe(
+      deleteRefreshToken({token: refresh}),
+      taskFoldReply(request, reply)
+    )()
   })
 }
