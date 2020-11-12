@@ -1,5 +1,9 @@
 {
   "name": "shared",
   "version": "1.0.0",
-  "license": "Unlicensed"
+  "license": "Unlicensed",
+  "devDependencies": {
+    "ttag": "1.7.22",
+    "ttag-cli": "1.8.6"
+  }
 }

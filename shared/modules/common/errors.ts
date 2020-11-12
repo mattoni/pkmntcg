@@ -7,7 +7,10 @@ export type AuthErrorCode =
   | 'unauthorized-redirect'
 
 /** [404] Not found errors */
-export type NotFoundErrorCode = 'endpoint-missing' | 'account-not-found'
+export type NotFoundErrorCode =
+  | 'endpoint-missing'
+  | 'account-not-found'
+  | 'card-not-found'
 
 /** [0] Client errors */
 export type ClientErrorCode = 'network-error' | 'response-invalid'

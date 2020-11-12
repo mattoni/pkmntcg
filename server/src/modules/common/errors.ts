@@ -34,7 +34,7 @@ export const createAuthError = (
 ): InternalError =>
   createInternalError({
     code,
-    status: 404,
+    status: 403,
     error,
   })
 
@@ -44,7 +44,7 @@ export const createNotFoundError = (
 ): InternalError =>
   createInternalError({
     code,
-    status: 403,
+    status: 404,
     error,
   })
 
@@ -100,6 +100,7 @@ const generateErrorDetails = (
   /** [404] Not found errors */
   'endpoint-missing': t`The requested endpoint does not exist.`,
   'account-not-found': t`The requested account does not exist.`,
+  'card-not-found': t`The requested card could not be found.`,
 
   /** [422] Validation errors */
   'validation-error': t`Validation of one or more fields failed.`,

@@ -6,5 +6,6 @@ module.exports = {
     // The expected returns are pretty complex thanks to fp-ts. It would be
     // extremely tedios to write them all out.
     '@typescript-eslint/explicit-module-boundary-types': 0,
+    '@typescript-eslint/no-unsafe-return': 0,
   },
 }

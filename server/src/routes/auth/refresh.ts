@@ -22,7 +22,6 @@ export const applyRefreshCookie = (account: {id: string}) => (
 
 export const handleTokenRefresh = async (
   server: FastifyInstance
-  // eslint-disable-next-line @typescript-eslint/require-await
 ): Promise<void> => {
   server.post('/refresh', async (request, reply) => {
     const {refresh} = request.cookies

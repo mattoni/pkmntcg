@@ -18,6 +18,7 @@ import {
 } from './routes/auth'
 import {Db} from './database'
 import fastifyDb from './plugins/database'
+import {handleCreateOwnedCard} from './routes/cards'
 
 // If you're adding new supported languages, put them on this list
 const languages = ['ja', 'en']
@@ -70,6 +71,9 @@ export const buildServer = async (db: Db, opts: FastifyServerOptions = {}) => {
   // Account Routes
   void server.register(handleCreateAccount, {prefix: '/v1'})
   void server.register(handleUpdateAccount, {prefix: '/v1'})
+
+  // Card Routes
+  void server.register(handleCreateOwnedCard, {prefix: '/v1'})
 
   server.setNotFoundHandler((request, reply) => {
     void replyWithError(
