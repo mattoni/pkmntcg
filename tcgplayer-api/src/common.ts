@@ -1,40 +1,30 @@
 export type AccessToken = string
 export type ApiResult<T> = ApiSuccessResult<T> | ApiErrorResult
+export type Timestamp = string
+import {RequestInit} from 'node-fetch'
 
-export type ClientCredentials = {
-  clientId: string
-  clientSecret: string
-}
-
-type ApiError = {
-  description: string
-}
-
-type QueryParams = Record<string, string>
-type PostData = Record<string, unknown>
+export const TCGPLAYER_API_URL = 'https://api.tcgplayer.com'
 
 export interface ApiSuccessResult<T> {
-  ok: true
-  data: T
+  totalItems?: number
+  success: true
+  results: T[]
+  errors: string[]
 }
 
 export interface ApiErrorResult {
-  ok: false
-  error: ApiError
+  success: false
+  errors: string[]
 }
+
+type PostData = Record<string, unknown>
 
 /** Common parameters no matter what type of request it is */
-type BaseApiRequestParams<Q extends QueryParams = QueryParams> = {
+type BaseApiRequestParams<Q extends string = string> = {
   endpoint: string
-  query?: Q
-  signal?: AbortSignal
-  version?: 'v1'
-  locale?: 'en' | 'ja'
+  query?: Record<Q, string>
+  signal?: RequestInit['signal']
   authority?: string
-}
-
-type WithAccessToken = {
-  token: AccessToken
 }
 
 type GetApiRequestParams = BaseApiRequestParams & {
@@ -43,99 +33,22 @@ type GetApiRequestParams = BaseApiRequestParams & {
 
 type PostApiRequestParams<
   T extends PostData = PostData,
-  Q extends QueryParams = QueryParams
+  Q extends string = string
 > = BaseApiRequestParams<Q> & {
   method: 'POST'
   data: T
 }
 
-export type ApiCall<Response> = (
-  params: Pick<GetApiRequestParams, 'query'> & WithAccessToken
+export type ApiCall<Response, Q extends string = string> = (
+  params?: Pick<BaseApiRequestParams<Q>, 'query'>
 ) => Promise<ApiResult<Response>>
 
-export type ApiCallWithData<Data extends PostData, Response> = (
-  params: Pick<PostApiRequestParams<Data>, 'query' | 'data'> & WithAccessToken
-) => Promise<ApiResult<Response>>
-
-export type ApiCallNoToken<
+export type ApiCallWithData<
   Data extends PostData,
   Response,
-  Query extends QueryParams = QueryParams
+  Q extends string = string
 > = (
-  params: Omit<
-    PostApiRequestParams<Data, Query>,
-    'method' | 'endpoint' | 'token'
-  >
+  params: Pick<PostApiRequestParams<Data, Q>, 'query' | 'data'>
 ) => Promise<ApiResult<Response>>
 
-type ApiRequestParams = GetApiRequestParams | PostApiRequestParams
-
-export const callApi = async <T>(
-  params: ApiRequestParams & Partial<WithAccessToken>
-): Promise<ApiResult<T>> => {
-  const {
-    endpoint,
-    authority = 'https://api.tcgplayer.com',
-    method,
-    token,
-    signal,
-    query = {},
-    version = 'v1',
-  } = params
-
-  const url = new URL(`http://${authority}/${version}${endpoint}`)
-
-  Object.keys(query).forEach((key) => url.searchParams.append(key, query[key]))
-
-  const headers = new Headers({
-    Accept: 'application/json',
-    Authorization: token ? `Bearer ${token}` : '',
-    'Content-Type': 'application/json',
-    cache: 'no-cache',
-  })
-
-  if (params.locale) {
-    headers.append('Accept-Language', params.locale)
-  }
-
-  const request = new Request(url.href, {
-    method,
-    headers,
-    credentials: 'include',
-    body: params.method === 'POST' ? JSON.stringify(params.data) : undefined,
-  })
-
-  try {
-    const res = await fetch(request, {signal})
-
-    try {
-      const result = await res.json()
-      if (!res.ok) {
-        return {
-          ok: false,
-          error: result.error,
-        } as const
-      }
-
-      return {
-        ok: true,
-        data: result.data,
-      }
-    } catch (e) {
-      return {
-        ok: false,
-        error: {
-          description: `The response returned from the server is invalid`,
-        },
-      }
-    }
-  } catch (e) {
-    console.log(e)
-    return {
-      ok: false,
-      error: {
-        description: `There was an error attempting to reach the server. There may be an issue with the internet connection.`,
-      },
-    }
-  }
-}
+export type ApiRequestParams = GetApiRequestParams | PostApiRequestParams

@@ -4,6 +4,7 @@ import {buildServer} from './server'
 import {FastifyLoggerOptions} from 'fastify'
 import {connectToDb} from './database'
 import gracefulShutdown from 'fastify-graceful-shutdown'
+import {TcgPlayer} from 'tcgplayer-api/src'
 
 const init = async () => {
   const server = await buildServer(await connectToDb(), {

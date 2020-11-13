@@ -1,3 +1,10 @@
 {
-  "name": "tcgplayer-api"
+  "name": "tcgplayer-api",
+  "dependencies": {
+    "date-fns": "2.16.1",
+    "node-fetch": "2.6.1"
+  },
+  "devDependencies": {
+    "@types/node-fetch": "2.5.7"
+  }
 }

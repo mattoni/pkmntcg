@@ -8,19 +8,19 @@ import {convertDocId} from '../common/mongo'
 import {WithoutId} from 'shared/types/common'
 import {formatISO} from 'date-fns'
 
-const getOwnedCardFromParams = (
-  params: Cards.OwnedCardCreateRequestSchema
-): WithoutId<OwnedCard> => {
-  return {
-    isFromPack: false,
-    purchasePrice: null,
-    salePrice: null,
-    soldDate: null,
-    created: formatISO(new Date()),
+// const getOwnedCardFromParams = (
+//   params: Cards.OwnedCardCreateRequestSchema
+// ): WithoutId<OwnedCard> => {
+//   return {
+//     isFromPack: false,
+//     purchasePrice: null,
+//     salePrice: null,
+//     soldDate: null,
+//     created: formatISO(new Date()),
 
-    ...params,
-  }
-}
+//     ...params,
+//   }
+// }
 
 export const insertOwnedCardIntoDb = (db: Db) => (
   params: Cards.OwnedCardCreateRequestSchema

@@ -9,5 +9,6 @@ module.exports = {
     '@typescript-eslint/no-unsafe-return': 0,
     '@typescript-eslint/no-unsafe-member-access': 0,
     '@typescript-eslint/explicit-module-boundary-types': 0,
+    '@typescript-eslint/restrict-template-expressions': 0,
   },
 }
