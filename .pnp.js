@@ -8550,6 +8550,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./shared/",
           "packageDependencies": [
             ["shared", "workspace:shared"],
+            ["pokemon-tcg-sdk-typescript", "npm:1.2.3"],
             ["ttag", "npm:1.7.22"],
             ["ttag-cli", "npm:1.8.6"]
           ],

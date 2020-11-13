@@ -26,4 +26,22 @@ export class Catalog {
       method: 'GET',
     })
   }
+
+  listAllGroupsDetails: ApiCall<
+    Category,
+    | 'categoryId'
+    | 'categoryName'
+    | 'isSupplemental'
+    | 'hasSealed'
+    | 'sortOrder'
+    | 'sortDesc'
+    | 'offest'
+    | 'limit'
+  > = async (params) => {
+    return this.auth.makeAuthorizedCall<Category>({
+      endpoint: '/catalog/groups',
+      method: 'GET',
+      query: params?.query,
+    })
+  }
 }

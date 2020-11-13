@@ -7311,6 +7311,7 @@ fsevents@~2.1.2:
   version: 0.0.0-use.local
   resolution: "shared@workspace:shared"
   dependencies:
+    pokemon-tcg-sdk-typescript: 1.2.3
     ttag: 1.7.22
     ttag-cli: 1.8.6
   languageName: unknown

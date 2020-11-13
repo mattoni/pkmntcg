@@ -1,13 +1,28 @@
+import dotenv from 'dotenv'
+dotenv.config()
 import Git from 'nodegit'
 import fs from 'fs'
 import {promisify} from 'util'
 import {PokemonTCG} from 'pokemon-tcg-sdk-typescript'
 import {TcgPlayer} from 'tcgplayer-api/src'
 
+/** TCGPlayer pokemon category id */
+const POKEMON_CAT_ID = 3
+
 const tcgPlayer = new TcgPlayer({
   clientId: process.env.TCGPLAYER_CLIENT_ID || '',
   clientSecret: process.env.TCGPLAYER_CLIENT_SECRET || '',
 })
+
+const test = (async () => {
+  const resp = await tcgPlayer.Catalog.listAllGroupsDetails({
+    query: {
+      categoryId: `${POKEMON_CAT_ID}`,
+    },
+  })
+
+  console.log(resp)
+})()
 
 const REPO_URL = 'https://github.com/PokemonTCG/pokemon-tcg-data.git'
 const REPO_DIR = '/tmp/pokemon-tcg-data'
@@ -28,9 +43,15 @@ const getCardFilenames = async () =>
     .map((f) => `${REPO_CARDS_DIR}/${f}`)
 
 const readCardsFromFiles = async (filenames: string[]) =>
-  promisify(fs.readFile)(filenames[0]).then(
-    (v) => JSON.parse(v.toString()) as PokemonTCG.Card[]
+  Promise.all(
+    filenames.map((filename) =>
+      promisify(fs.readFile)(filename).then(
+        (v) => JSON.parse(v.toString()) as PokemonTCG.Card[]
+      )
+    )
   )
+
+// const matchCollectionToTcgPlayerId = async (cards: PokemonTCG.Card[]) =>
 
 // void setup()
 //   .then(cloneRepo)
@@ -41,4 +62,4 @@ const readCardsFromFiles = async (filenames: string[]) =>
 //   .then(readCardsFromFiles)
 //   .then(console.log)
 
-void getCardFilenames().then(readCardsFromFiles).then(console.log)
+// void getCardFilenames().then(readCardsFromFiles).then(console.log)

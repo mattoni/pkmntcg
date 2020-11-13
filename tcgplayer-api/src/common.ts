@@ -22,7 +22,7 @@ type PostData = Record<string, unknown>
 /** Common parameters no matter what type of request it is */
 type BaseApiRequestParams<Q extends string = string> = {
   endpoint: string
-  query?: Record<Q, string>
+  query?: Partial<Record<Q, string>>
   signal?: RequestInit['signal']
   authority?: string
 }

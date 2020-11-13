@@ -32,11 +32,6 @@ export class TcgPlayerAuth {
       this.accessToken = resp.token
     }
 
-    console.log({
-      client: this.clientCreds,
-      accessToken: this.accessToken,
-    })
-
     const {
       endpoint,
       authority = 'https://api.tcgplayer.com',
@@ -45,10 +40,12 @@ export class TcgPlayerAuth {
       query = {},
     } = params
 
-    const url = new URL(`${authority}/${endpoint}`)
+    const url = new URL(`${authority}${endpoint}`)
     Object.keys(query).forEach((key) =>
-      url.searchParams.append(key, query[key])
+      url.searchParams.append(key, query[key] || '')
     )
+
+    console.log('URRRRL', url)
     const headers = new Headers({
       Accept: 'application/json',
       Authorization: `Bearer ${this.accessToken?.access_token}`,
@@ -103,9 +100,6 @@ export class TcgPlayerAuth {
       const resp = await fetch(`${TCGPLAYER_API_URL}/token`, {
         method: 'POST',
         body: formData,
-        // headers: {
-        //   'Content-Type': 'application/x-www-form-urlencoded',
-        // },
       })
       try {
         const data = await resp.json()
